@@ -126,16 +126,6 @@ This notebook is designed to simulate multiple Tic-Tac-Toe games using different
 
    - Navigate to `tictactoe_main_game.ipynb` or `tictactoe_test_cases.ipynb` within the Jupyter interface.
 
-## Notes
-
-- Ensure that all cells are run in order for proper initialization.
-- The game and simulations are designed to run within the Jupyter environment.
-- Be patient with longer simulations; complex AI calculations may take time.
-
-## License
-
-[Include license information here if applicable.]
-
 ---
 
 Feel free to reach out if you have any questions or need further assistance!
