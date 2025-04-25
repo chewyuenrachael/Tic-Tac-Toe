@@ -1,131 +1,141 @@
-# Tic-Tac-Toe AI Game
+# 🎮 Tic-Tac-Toe AI Game (4x4 Grid) — Minimax + Strategy Simulation
 
-## Overview
+This project implements a customizable **Tic-Tac-Toe AI game** on a **4x4 board**, powered by the **Minimax algorithm with alpha-beta pruning**. It also includes a simulation notebook to evaluate multiple AI strategies using statistical analysis and visualizations.
 
-This repository contains two Jupyter notebooks that allow you to play Tic-Tac-Toe against an AI opponent and analyze various AI strategies through simulations.
-
-- **`tictactoe_main_game.ipynb`**: Play Tic-Tac-Toe against an AI using a minimax algorithm with alpha-beta pruning.
-- **`tictactoe_test_cases.ipynb`**: Run simulations to analyze the performance of different AI strategies.
+> 🧠 Built for those exploring **AI search strategies**, **heuristic design**, or **automated game simulations**.
 
 ---
 
-## `tictactoe_main_game.ipynb`
+## 🚀 Key Components
 
-### Overview
-
-This notebook lets you play a game of Tic-Tac-Toe against an AI directly within the notebook. The AI uses advanced algorithms to determine the best possible moves based on the current game state.
-
-### Instructions for Playing
-
-1. **Starting the Game:**
-   - Open the `tictactoe_main_game.ipynb` notebook in Jupyter Notebook or JupyterLab.
-   - Run all cells to initialize the game. You can do this by clicking **Kernel** > **Restart & Run All** in the menu bar.
-
-2. **Playing Your Move:**
-   - When prompted, enter your move by specifying the **row** and **column** numbers separated by a space. For example, typing `2 0` places your tile on the 3rd row and 1st column.
-   - Make sure the position you choose is empty; otherwise, you'll be asked to try again.
-
-3. **Viewing Game Output:**
-   - After each move, the current state of the board is displayed.
-   - Continue entering your moves when prompted until the game concludes.
-
-### Game Rules
-
-- The game is played on a **4x4 grid**.
-- **You** play as **'O'**, and the **AI** plays as **'X'**.
-- The objective is to align **four** of your symbols vertically, horizontally, or diagonally.
-- The game ends when a player wins or when the board is full, resulting in a tie.
-
-### Technical Details
-
-- The AI uses a **minimax algorithm with alpha-beta pruning** to efficiently search the game tree and determine optimal moves.
-- The 4x4 grid increases the game's complexity, providing a more challenging experience.
+- 🧠 `tictactoe_main_game.ipynb`: Play Tic-Tac-Toe against an AI using **Minimax + Alpha-Beta Pruning**.
+- 📊 `tictactoe_test_cases.ipynb`: Simulate and evaluate **5 AI strategies** (aggressive, defensive, random, etc.) over multiple games.
 
 ---
 
-## `tictactoe_test_cases.ipynb`
+## 🧠 Gameplay: `tictactoe_main_game.ipynb`
 
-### Overview
+### How to Play
 
-This notebook is designed to simulate multiple Tic-Tac-Toe games using different AI strategies. It helps analyze the performance of various strategies under controlled conditions.
+1. Open the notebook in **Jupyter Notebook** or **JupyterLab**.
+2. Click **Kernel > Restart & Run All** to start the game.
+3. When prompted, enter your move as `row column` (e.g., `2 0`).
 
-### Running Simulations
+### Game Details
 
-1. **Setting Up:**
-   - Open the `tictactoe_test_cases.ipynb` notebook in Jupyter Notebook or JupyterLab.
-   - Run all cells sequentially to set up functions and variables.
+- **Grid**: 4x4
+- **You**: `'O'`  
+- **AI**: `'X'`  
+- **Goal**: Align 4 of your symbols vertically, horizontally, or diagonally.
 
-2. **Running Simulations:**
-   - The last cell initiates the simulation process, playing multiple games using different AI strategies.
-   - Adjust parameters like `num_simulations` and `depth_limit` to control the number of games and AI search depth.
+### AI Design
 
-3. **Simulation Duration:**
-   - Depending on the number of simulations and complexity, experiments may take several minutes to complete.
-   - Progress and results are displayed as simulations run.
-
-### Results and Analysis
-
-- The notebook calculates and displays statistics for each strategy, including:
-  - **Win/Loss/Draw ratios**
-  - **Average decision times**
-- Data is visualized through plots, providing insights into each strategy's performance.
-
-### Experiment Details
-
-- **Strategies Tested:**
-  - **Aggressive**: Prioritizes offensive moves to win quickly.
-  - **Defensive**: Focuses on blocking the opponent's winning opportunities.
-  - **Balanced**: Combines offensive and defensive tactics.
-  - **Random**: Chooses moves randomly.
-  - **Corner**: Prioritizes taking corner positions.
-
-- **Effectiveness Metrics:**
-  - Strategies are evaluated based on predefined metrics to assess their performance comprehensively.
-
-### Usage
-
-- Ideal for those interested in AI strategy development and analysis.
-- Modify simulation parameters to explore different aspects of AI performance.
+- **Algorithm**: Minimax with alpha-beta pruning.
+- **Heuristic Evaluation**: Scores board states based on win conditions and future threats.
+- **Search Depth**: Balanced for real-time interactivity and strategic depth.
 
 ---
 
-## Requirements
+## 🤖 AI Strategy Simulation: `tictactoe_test_cases.ipynb`
 
-- **Python 3.x**
-- **Jupyter Notebook** or **JupyterLab**
-- **Python Packages:**
-  - `math`
-  - `random`
-  - `time`
-  - `pandas`
-  - `matplotlib`
+Use this notebook to run simulations comparing different strategies in self-play and AI-vs-AI settings.
 
-## Installation
+### Included Strategies
 
-1. **Clone the Repository:**
+| Strategy     | Behavior |
+|--------------|----------|
+| 🎯 **Aggressive** | Maximizes own win conditions |
+| 🛡️ **Defensive**  | Blocks opponent’s winning paths |
+| ⚖️ **Balanced**   | Blends offense and defense |
+| 🎲 **Random**     | Makes arbitrary legal moves |
+| 🔲 **Corner-Based** | Prioritizes corners and edges |
 
-   ```bash
-   git clone <repository_url>
-   ```
+### Metrics Collected
 
-2. **Install Required Packages:**
+- ✅ **Win / Loss / Draw ratios**
+- ⏱️ **Average decision time per move**
+- 📊 **Effectiveness plots** (matplotlib visualizations)
 
-   Install any missing packages using `pip`:
+### Customization
 
-   ```bash
-   pip install pandas matplotlib
-   ```
-
-3. **Launch Jupyter Notebook:**
-
-   ```bash
-   jupyter notebook
-   ```
-
-4. **Open the Notebooks:**
-
-   - Navigate to `tictactoe_main_game.ipynb` or `tictactoe_test_cases.ipynb` within the Jupyter interface.
+You can adjust:
+```python
+num_simulations = 100
+depth_limit = 3
+```
+to control simulation size and search depth.
 
 ---
 
-Feel free to reach out if you have any questions or need further assistance!
+## ⚙️ Installation & Setup
+
+Follow these steps to get started:
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/tictactoe-ai.git
+cd tictactoe-ai
+```
+
+### 2. (Optional) Create a Virtual Environment
+```bash
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+```
+
+### 3. Install Required Dependencies
+```bash
+pip install pandas matplotlib
+```
+
+### 4. Launch Jupyter Notebook
+If needed:
+```bash
+pip install notebook
+```
+Then:
+```bash
+jupyter notebook
+```
+
+### 5. Open the Notebooks
+Navigate to:
+- `tictactoe_main_game.ipynb` to play the game.
+- `tictactoe_test_cases.ipynb` to run strategy comparisons.
+
+---
+
+## 📁 File Structure
+
+```
+tictactoe-ai/
+├── tictactoe_main_game.ipynb     # Playable 4x4 Tic-Tac-Toe AI game
+├── tictactoe_test_cases.ipynb    # Strategy simulation and analysis
+├── README.md                     # You're here!
+```
+
+---
+
+## 🌱 Future Improvements
+
+- 🔄 **Custom Grid Sizes**: Generalize to NxN boards.
+- 🧠 **Reinforcement Learning Agent**: Train with Q-learning or DQN.
+- 📊 **Move Explainability**: Add heatmaps for predicted scores.
+- 🌐 **Web Interface**: Deploy as a web app using Streamlit or Flask.
+- 🎮 **Multiplayer Mode**: Add human-vs-human or online support.
+
+---
+
+## 👩‍💻 Ideal For
+
+- CS students learning **AI search algorithms**
+- Developers exploring **heuristic modeling**
+- Researchers benchmarking **decision-making strategies**
+- Educators teaching **game theory and algorithms**
+
+---
+
+## 💬 Questions or Contributions?
+
+Feel free to open an issue or submit a pull request if you'd like to contribute!  
+Let’s level up the game—one move at a time. 🧠✨
